@@ -3,22 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>LucidQL Youtube Tutorial | Simon Carr</title>
+  <title>LucidQL withCount feature | Simon Carr</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Simon Carr,Simon Carr's Blog">
   
-  <meta name="description" content="I have added a YouTube tutorial on how to use LucidQL">
+  <meta name="description" content="I have added a new feature to the library withCount  Details about what this feature gives you can be found in the Adonis Lucid docs https://adonisjs.com/docs/4.0/relationships#_counts  The library do">
+<meta name="keywords" content="LucidQL,Lucid,ORM,withCount">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LucidQL Youtube Tutorial">
-<meta property="og:url" content="https://simoncarr.co.uk/2019/03/29/LucidQL-Youtube/index.html">
+<meta property="og:title" content="LucidQL withCount feature">
+<meta property="og:url" content="https://simoncarr.co.uk/2019/03/30/LucidQL-withCount-feature/index.html">
 <meta property="og:site_name" content="Simon Carr">
-<meta property="og:description" content="I have added a YouTube tutorial on how to use LucidQL">
+<meta property="og:description" content="I have added a new feature to the library withCount  Details about what this feature gives you can be found in the Adonis Lucid docs https://adonisjs.com/docs/4.0/relationships#_counts  The library do">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-29T00:39:54.150Z">
+<meta property="og:updated_time" content="2019-03-30T13:29:43.103Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LucidQL Youtube Tutorial">
-<meta name="twitter:description" content="I have added a YouTube tutorial on how to use LucidQL">
+<meta name="twitter:title" content="LucidQL withCount feature">
+<meta name="twitter:description" content="I have added a new feature to the library withCount  Details about what this feature gives you can be found in the Adonis Lucid docs https://adonisjs.com/docs/4.0/relationships#_counts  The library do">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -106,20 +107,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-LucidQL-Youtube" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-LucidQL-withCount-feature" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      LucidQL Youtube Tutorial
+      LucidQL withCount feature
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-03-29
+          <i class="fa fa-calendar"></i>  2019-03-30
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -135,13 +136,22 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>I have added a YouTube tutorial on how to use LucidQL</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/uNnS3gj5g1s" frameborder="0" allowfullscreen></iframe></div>
+            <p>I have added a new feature to the library <code>withCount</code></p>
+<blockquote>
+<p>Details about what this feature gives you can be found in the Adonis Lucid docs</p>
+<p><a href="https://adonisjs.com/docs/4.0/relationships#_counts" target="_blank" rel="noopener">https://adonisjs.com/docs/4.0/relationships#_counts</a></p>
+</blockquote>
+<p>The library docs have been updated as follows</p>
+<h3 id="withCount"><a href="#withCount" class="headerlink" title="withCount"></a>withCount</h3><p>Accepts an <code>Array</code> of <code>Objects</code></p>
+<p>Lucid’s own documentation for this feature can be found here <a href="https://adonisjs.com/docs/4.0/relationships#_counts" target="_blank" rel="noopener">https://adonisjs.com/docs/4.0/relationships#_counts</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">"withCount": [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"table"</span>: &lt;String&gt;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>The data returned will include a <code>__meta__</code> property with a count of the records that are related to the baseTable</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//The following</span><br><span class="line">"withCount": [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"table"</span>: <span class="string">"tags"</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">//Would produce</span><br><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  "__meta__": &#123;</span><br><span class="line">    "tags_count": 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
             <div class="post-copyright">
     <div class="content">
-        <p>Updated： 2019-03-29 00:39</p>
-        <p>Link： <a class="post-url" href="/2019/03/29/LucidQL-Youtube/" title="LucidQL Youtube Tutorial">https://simoncarr.co.uk/2019/03/29/LucidQL-Youtube/</a></p>
+        <p>Updated： 2019-03-30 13:29</p>
+        <p>Link： <a class="post-url" href="/2019/03/30/LucidQL-withCount-feature/" title="LucidQL withCount feature">https://simoncarr.co.uk/2019/03/30/LucidQL-withCount-feature/</a></p>
         <footer>
             <a href="https://simoncarr.co.uk">
                 <img src="/images/logo.png" alt="Simon Carr">
@@ -167,7 +177,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://simoncarr.co.uk/2019/03/29/LucidQL-Youtube/&title=《LucidQL Youtube Tutorial》 — Simon Carr&pic=https://simoncarr.co.ukimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://simoncarr.co.uk/2019/03/30/LucidQL-withCount-feature/&title=《LucidQL withCount feature》 — Simon Carr&pic=https://simoncarr.co.ukimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -177,22 +187,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://simoncarr.co.uk/2019/03/29/LucidQL-Youtube/&title=《LucidQL Youtube Tutorial》 — Simon Carr&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://simoncarr.co.uk/2019/03/30/LucidQL-withCount-feature/&title=《LucidQL withCount feature》 — Simon Carr&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://simoncarr.co.uk/2019/03/29/LucidQL-Youtube/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://simoncarr.co.uk/2019/03/30/LucidQL-withCount-feature/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LucidQL Youtube Tutorial》 — Simon Carr&url=https://simoncarr.co.uk/2019/03/29/LucidQL-Youtube/&via=https://simoncarr.co.uk" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LucidQL withCount feature》 — Simon Carr&url=https://simoncarr.co.uk/2019/03/30/LucidQL-withCount-feature/&via=https://simoncarr.co.uk" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://simoncarr.co.uk/2019/03/29/LucidQL-Youtube/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://simoncarr.co.uk/2019/03/30/LucidQL-withCount-feature/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -202,7 +212,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://simoncarr.co.uk/2019/03/29/LucidQL-Youtube/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://simoncarr.co.uk/2019/03/30/LucidQL-withCount-feature/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -211,6 +221,19 @@
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/LucidQL/" class="color3">LucidQL</a>
+      
+    <a href="/tags/Lucid/" class="color1">Lucid</a>
+      
+    <a href="/tags/ORM/" class="color4">ORM</a>
+      
+    <a href="/tags/withCount/" class="color5">withCount</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -218,22 +241,18 @@
 </article>
 
 
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#withCount"><span class="post-toc-text">withCount</span></a></li></ol>
+        </nav>
+    </aside>
+    
 
 <nav id="article-nav">
   
-    <a href="/2019/03/30/LucidQL-withCount-feature/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          LucidQL withCount feature
-        
-      </span>
-    </a>
   
-  
-    <a href="/2019/03/28/LucidQL/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">LucidQL</span>
+    <a href="/2019/03/29/LucidQL-Youtube/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">LucidQL Youtube Tutorial</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
@@ -390,7 +409,7 @@
 <script>
   var disqus_shortname = 'simoncarr';
   
-  var disqus_url = 'https://simoncarr.co.uk/2019/03/29/LucidQL-Youtube/';
+  var disqus_url = 'https://simoncarr.co.uk/2019/03/30/LucidQL-withCount-feature/';
   
   (function(){
     var dsq = document.createElement('script');
